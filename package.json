@@ -1,0 +1,24 @@
+{
+  "name": "comp426groupproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "script": "node -r esm comp426-frontend/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsyang0309/COMP426GroupProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wsyang0309/COMP426GroupProject/issues"
+  },
+  "homepage": "https://github.com/wsyang0309/COMP426GroupProject#readme"
+}
