@@ -5,13 +5,15 @@
   "main": "script.js",
   "dependencies": {
     "apicalypse": "^0.1.6",
+    "axios": "^0.19.0",
     "browser-sync": "^2.26.7",
     "esm": "^3.2.25",
     "jquery": "^3.4.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node -r esm script.js"
+    "test": "node -r esm script.js",
+    "gamePageTest": "node -r esm gamePageScript.js"
   },
   "author": "",
   "license": "ISC"

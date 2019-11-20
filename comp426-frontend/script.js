@@ -1,11 +1,11 @@
 import apicalypse from 'apicalypse';
 import axios from 'axios';
 
-let API_KEY = "ea8883099be2c2944a4d34a9752d94f0";
+
 
 
 let getGames = async function () {
-    console.log("Entered");
+    let API_KEY = "ea8883099be2c2944a4d34a9752d94f0";
     axios({
         url: "https://api-v3.igdb.com/games",
         method: 'POST',
