@@ -6,6 +6,7 @@
 
     <!-- Include links to CSS stylesheets below -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
 
 
 </head>
@@ -31,11 +32,21 @@
             </ul>
         </div>
 
+        <!-- <div class="title"></div> -->
 
-        <div class="section container" id="gameInfo">
+        <div class="section columns" id="gameInfo">
+            <div class="media column" id="cover"></div>
+            <div class="column" id="details"></div>
+            <div class="column" id="similar"></div>
+        </div>
 
-
-
+        <div class="section" id="media">
+            <h1 class="subtitle">Artwork</h1>
+            <div id="artwork" class="columns"></div>
+            <h1 class="subtitle">Videos</h1>
+            <div id="videos" class="columns"></div>
+            <h1 class="subtitle">Member Reviews</h1>
+            <div id="reviews" class="container"></div>
         </div>
 
 

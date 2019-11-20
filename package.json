@@ -1,10 +1,13 @@
 {
   "name": "comp426groupproject",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
-    "esm": "^3.2.25"
+    "apicalypse": "^0.1.6",
+    "axios": "^0.19.0",
+    "browser-sync": "^2.26.7",
+    "esm": "^3.2.25",
+    "jquery": "^3.4.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -20,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/wsyang0309/COMP426GroupProject/issues"
   },
-  "homepage": "https://github.com/wsyang0309/COMP426GroupProject#readme"
+  "homepage": "https://github.com/wsyang0309/COMP426GroupProject#readme",
+  "description": ""
 }
