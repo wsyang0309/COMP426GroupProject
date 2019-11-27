@@ -60,9 +60,39 @@ img.media{
     width: 375px;
     
 }
+.search {
+    display: inline;
+}
+
+.search input[type=text] {
+  float: right;
+  padding: 6px;
+  border: solid black;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
 #artwork{
     overflow-x: scroll;
 }
+#gamePosters .posters:hover {
+    height:500px;
+    width: 375px;
+}
+#gamePosters .posters {
+    height:400px;
+    width: 300px;
+    transition: all 0.7s ease;
+}
+#gamePosters{
+    overflow-y: auto;
+    overflow-x: auto;
+    
+    white-space: nowrap;
+   
+}
+
+
 #videos{
     overflow-x: scroll;
 }
