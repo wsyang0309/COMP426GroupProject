@@ -7,6 +7,24 @@
     },
     "test": {
       "passwordHash": "$2b$10$W84cfWNS.ExB94cy0t/X2eEHo2N9FQ.GjrY4OZRDlo94iyD14p7CK"
+    },
+    "test@gmail": {
+      "com": {
+        "passwordHash": "$2b$10$akwdEGw7wKyh9bHvV0KeI./LsbprKvCd6mvvdgZtRWgCBzudnUCle",
+        "data": {
+          "fname": "FName",
+          "lname": "LName"
+        }
+      }
+    },
+    "test1@gamil": {
+      "com": {
+        "passwordHash": "$2b$10$8bEkwjGPgXdiwxcTdWf4BO4zA0gKO7v1gnssqGIvBHC.Dh4PVpJUi",
+        "data": {
+          "fname": "test F",
+          "lname": "test L"
+        }
+      }
     }
   }
 }

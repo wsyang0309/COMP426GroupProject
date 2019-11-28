@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="script.js"></script>
+    <script src="indexScript.js"></script>
 
 </head>
 
@@ -19,21 +19,22 @@
 
 
         <div class="nav">
-            <ul>
-                <li><a href="homePage.html">Homepage</a></li>
-                
+            <ul id="nav_list">
+                <li><a href="signupPage.html">Sign Up</a></li>
+                <!--For ease of development only. 
+                This line will be removed in the end, this item will show up once a user logged in-->
+                <li><a href="homePage.html">Home Page (dev)</a></li> 
             </ul>
         </div>
 
         <!--inputs for account login and sign up-->
         <div>
-            <input id="email" type="email" placeholder="example@gmail.com" required>
-            <input id="password" type="password" placeholder="********" required>
+            Email: <input id="email" type="email" placeholder="example@gmail.com" required><br>
+            Password: <input id="password" type="password" placeholder="********" required><br>
         </div>
         
         <div>
             <button id="login_button">Login</button>
-            <button id="signup_button">Sign Up</button>
         </div>
 
         <div>
