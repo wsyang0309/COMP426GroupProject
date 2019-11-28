@@ -2,48 +2,44 @@
 <html lang="en">
 
 <head>
-    <title>All Things Gaming</title>
+    <title>Signup</title>
 
     <!-- Include links to CSS stylesheets below -->
-    
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
 
 </head>
 
 <body>
-
+    
     <div id="root">
-        <!-- TODO: Add other links to scripts here -->
-        <script src="node_modules/jquery/dist/jquery.js" type="text/JavaScript"></script>
-        <script src="indexScript.js" type="module"></script>
-        <script src="node_modules/axios/dist/axios.js"></script>
         <img src="/media/logo.png" class="banner" />
-
-
-
 
 
         <div class="nav">
             <ul>
-                <li><a href="login/index.html">Signup</a></li>
-                <li><a href="gamePage.html">GamePage (Testing)</a></li>
-                <!--- <li><a href=".html"></a></li>-->
+                <li><a href="homePage.html">Homepage</a></li>
+                
             </ul>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Search..">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
-            <div class="section" id="media">
-                <h1 class="subtitle">Popular Games</h1>
-                <div id="gamePosters" class="columns"></div>
-                
-                <h1 class="subtitle">Member Reviews</h1>
-                <div id="reviews" class="container"></div>
-            </div>
-            <div class="contentIndex">        </div>
 
+        <!--inputs for account login and sign up-->
+        <div>
+            <input id="email" type="email" placeholder="example@gmail.com" required>
+            <input id="password" type="password" placeholder="********" required>
+        </div>
+        
+        <div>
+            <button id="login_button">Login</button>
+            <button id="signup_button">Sign Up</button>
+        </div>
+
+        <div>
+            <p id="message"></p>
+        </div>
+        
     </div>
 </body>
 

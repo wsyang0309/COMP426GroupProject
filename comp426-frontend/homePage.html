@@ -5,18 +5,18 @@
     <title>All Things Gaming</title>
 
     <!-- Include links to CSS stylesheets below -->
+    
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
-
 
 </head>
 
 <body>
 
-    <div id="gameRoot">
+    <div id="root">
         <!-- TODO: Add other links to scripts here -->
         <script src="node_modules/jquery/dist/jquery.js" type="text/JavaScript"></script>
-        <script src="gamePageScript.js" type="module"></script>
+        <script src="homeScript.js" type="module"></script>
         <script src="node_modules/axios/dist/axios.js"></script>
         <img src="/media/logo.png" class="banner" />
 
@@ -26,29 +26,23 @@
 
         <div class="nav">
             <ul>
-                <li><a href="homePage.html">Home</a></li>
+                <li><a href="index.html">Login</a></li>
                 <li><a href="gamePage.html">GamePage (Testing)</a></li>
                 <!--- <li><a href=".html"></a></li>-->
             </ul>
         </div>
-
-        <!-- <div class="title"></div> -->
-
-        <div class="section columns" id="gameInfo">
-            <div class="media column" id="cover"></div>
-            <div class="column" id="details"></div>
-            <div class="column" id="similar"></div>
+        <div class="search">
+            <input type="text" placeholder="Search..">
+            <button type="submit"><i class="fa fa-search"></i></button>
         </div>
-
-        <div class="section" id="media">
-            <h1 class="subtitle">Artwork</h1>
-            <div id="artwork" class="columns"></div>
-            <h1 class="subtitle">Videos</h1>
-            <div id="videos" class="columns"></div>
-            <h1 class="subtitle">Member Reviews</h1>
-            <div id="reviews" class="container"></div>
-        </div>
-
+            <div class="section" id="media">
+                <h1 class="subtitle">Popular Games</h1>
+                <div id="gamePosters" class="columns"></div>
+                
+                <h1 class="subtitle">Member Reviews</h1>
+                <div id="reviews" class="container"></div>
+            </div>
+            <div class="contentIndex">        </div>
 
     </div>
 </body>
