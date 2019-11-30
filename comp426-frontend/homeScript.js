@@ -3,7 +3,21 @@
 
 //API Documentation: https://api-docs.igdb.com/#about
 
+/*
+Syntax for SAVING data to localStorage:
+
+localStorage.setItem("key", "value");
+Syntax for READING data from localStorage:
+
+var lastname = localStorage.getItem("key");
+Syntax for REMOVING data from localStorage:
+
+localStorage.removeItem("key");
+*/
+
 const API_KEY = "ea8883099be2c2944a4d34a9752d94f0";
+
+let $posters = $(`#gamePosters`);
 
 let start = async function() {
     let result = await axios({
@@ -22,7 +36,6 @@ let start = async function() {
         
     }
 
-    console.log(result);
 }
 
 let addCover = async function (cover,id) {
@@ -36,9 +49,35 @@ let addCover = async function (cover,id) {
         },
         data: `fields url, height, width, image_id; where id=${cover};`
     })
-   
-    $('#gamePosters').prepend(`<img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" class="posters" id=${id}/>`)
+   // Clickable posters
+    //$('#gamePosters').prepend(`<a href=""><img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" class="posters" id=${id}/></a>`)
+    $('#gamePosters').prepend(`<img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" onclick="handlePosterClick(${id})" class="posters" id=${id}/></a>`)
+    //$('#gamePosters').prepend(`<img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" class="posters" id=${id}/>`)
+    //console.log("game id is "+id);
+    //$posters.on('click',`#${id}`, handlePosterClick);
+    function handlePosterClick(gameid) {
+        console.log("game id is " + gameid) + " after clicking";
+        localStorage.setItem("id", gameid);
+        window.location.href = "gamePage.html";
+    }
 }
+/*
+let handlePosterClick = function(gameid) {
+    event.preventDefault();
+    
+    console.log("game id is " + gameid) + " after clicking";
+    localStorage.setItem("id", gameid);
+    window.location.href = "gamePage.html";
+}
+*/
+
+/*
+function handlePosterClick(gameid) {
+    console.log("game id is " + gameid) + " after clicking";
+    localStorage.setItem("id", gameid);
+    window.location.href = "gamePage.html";
+}
+*/
 
 $(document).ready(function () {
     start();

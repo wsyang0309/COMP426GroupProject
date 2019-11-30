@@ -29,7 +29,7 @@
         </div>
         <div class="search">
             <input type="text" placeholder="Search..">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit"><i id="search">submit</button>
         </div>
             <div class="section" id="media">
                 <h1 class="subtitle">Popular Games</h1>
@@ -39,7 +39,13 @@
                 <div id="reviews" class="container"></div>
             </div>
             <div class="contentIndex">        </div>
-
+            <script> 
+            function handlePosterClick(gameid) {
+                    console.log("game id is " + gameid) + " after clicking";
+                    localStorage.setItem("id", gameid);
+                    window.location.href = "gamePage.html";
+            }
+            </script>
     </div>
 </body>
 

@@ -3,7 +3,9 @@
 
 //API Documentation: https://api-docs.igdb.com/#about
 
-let gameID = 103329;
+//let gameID = 103329;
+let gameID = localStorage.getItem("id");
+console.log(gameID);
 const API_KEY = "ea8883099be2c2944a4d34a9752d94f0";
 
 let start = async function () {

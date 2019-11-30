@@ -62,8 +62,13 @@ img.media{
 }
 .search {
     display: inline;
+    float: right;
+    
 }
 
+#search {
+    margin-top: 50px;
+}
 .search input[type=text] {
   float: right;
   padding: 6px;
@@ -86,7 +91,7 @@ img.media{
 }
 #gamePosters{
     overflow-y: auto;
-    overflow-x: auto;
+    overflow-x: scroll;
     
     white-space: nowrap;
    
