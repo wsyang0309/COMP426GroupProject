@@ -50,34 +50,26 @@ let addCover = async function (cover,id) {
         data: `fields url, height, width, image_id; where id=${cover};`
     })
    // Clickable posters
-    //$('#gamePosters').prepend(`<a href=""><img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" class="posters" id=${id}/></a>`)
     $('#gamePosters').prepend(`<img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" onclick="handlePosterClick(${id})" class="posters" id=${id}/></a>`)
-    //$('#gamePosters').prepend(`<img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" class="posters" id=${id}/>`)
-    //console.log("game id is "+id);
-    //$posters.on('click',`#${id}`, handlePosterClick);
+    
     function handlePosterClick(gameid) {
         console.log("game id is " + gameid) + " after clicking";
         localStorage.setItem("id", gameid);
         window.location.href = "gamePage.html";
     }
 }
-/*
-let handlePosterClick = function(gameid) {
-    event.preventDefault();
-    
-    console.log("game id is " + gameid) + " after clicking";
-    localStorage.setItem("id", gameid);
-    window.location.href = "gamePage.html";
-}
-*/
 
-/*
-function handlePosterClick(gameid) {
-    console.log("game id is " + gameid) + " after clicking";
-    localStorage.setItem("id", gameid);
-    window.location.href = "gamePage.html";
+let addNews = async function() {
+    let result = await axios({
+        url: "https://api-v3.igdb.com/feeds",
+  method: 'POST',
+  headers: {
+      'Accept': 'application/json',
+      'user-key': API_KEY
+  },
+  data: "fields category,content,created_at,feed_likes_count,feed_video,games,meta,published_at,pulse,slug,title,uid,updated_at,url,user; where category = 2"
+    })
 }
-*/
 
 $(document).ready(function () {
     start();
