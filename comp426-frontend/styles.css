@@ -97,6 +97,13 @@ img.media{
    
 }
 
+h2 {
+    font-weight: bold;
+}
+
+#posts {
+    margin: 40pt;
+}
 
 #videos{
     overflow-x: scroll;

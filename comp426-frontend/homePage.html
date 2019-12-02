@@ -35,13 +35,16 @@
                 <h1 class="subtitle">Popular Games</h1>
                 <div id="gamePosters" class="columns"></div>
                 
-                <h1 class="subtitle">Member Reviews</h1>
-                <div id="reviews" class="container"></div>
+                <h1 class="subtitle">News
+                </h1>
+                <div id=news></div>
+                
             </div>
             <div class="contentIndex">        </div>
+            
             <script> 
             function handlePosterClick(gameid) {
-                    console.log("game id is " + gameid) + " after clicking";
+                   
                     localStorage.setItem("id", gameid);
                     window.location.href = "gamePage.html";
             }

@@ -35,7 +35,7 @@ let start = async function() {
         addCover(result.data[i].cover, result.data[i].id)
         
     }
-
+    addNews();
 }
 
 let addCover = async function (cover,id) {
@@ -60,15 +60,32 @@ let addCover = async function (cover,id) {
 }
 
 let addNews = async function() {
-    let result = await axios({
-        url: "https://api-v3.igdb.com/feeds",
-  method: 'POST',
-  headers: {
-      'Accept': 'application/json',
-      'user-key': API_KEY
-  },
-  data: "fields category,content,created_at,feed_likes_count,feed_video,games,meta,published_at,pulse,slug,title,uid,updated_at,url,user; where category = 2"
-    })
+    let pulses = await axios({
+        url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/pulses",
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'user-key': API_KEY
+        },
+        data: "fields author,category,created_at,ignored,image,published_at,pulse_image,pulse_source,summary,tags,title,uid,updated_at,videos,website; where created_at > 1546300800; limit 30;"
+      })
+    
+    console.log(pulses)
+    for(let i=0;i<pulses.data.length;i++) {
+        if (pulses.data[i].summary !== undefined) {
+            $('#news').append(`
+                    <div id=posts class=${pulses.data.id}>
+                        <h2 id="author">${pulses.data[i].author}</h2>
+                        <h3 id="ptitle">${pulses.data[i].title}</h3>
+                        <img id="pimg" src="${pulses.data[i].image}">
+                        <p id="psum">${pulses.data[i].summary}</p>
+                        
+                    </div>`)
+        }
+        
+        
+    }
+
 }
 
 $(document).ready(function () {
