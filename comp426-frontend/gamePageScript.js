@@ -206,6 +206,48 @@ let addArtwork = async function () {
     }
 }
 
+
+//Saving Game to user profile
+// let myStorage = window.localStorage;
+
+// async function handleSaveGame(e) {
+
+//     const user = await $.ajax({
+//         method: 'GET',
+//         url: "http://localhost:3000/account/status",
+//         headers: {
+//             "Authorization": "Bearer " + myStorage.getItem("jwt"),
+//         },
+//     });
+    
+//     const currentUser = user.user;
+//     console.log(currentUser.name);
+
+//     const save = await $.ajax({
+//         method: 'POST',
+//         url: "http://localhost:3000/user/" + currentUser.name,
+//         "data": {
+//             "games" : "1",
+//         },
+//     });
+
+//     // const user_games = await $.ajax({
+//     //     method: 'GET',
+//     //     url: "http://localhost:3000/users/" + currentUser.name + "/games",
+//     // }).then(response => {
+//     //     games = response;
+//     //     games.push(myStorage.getItem("id"));
+//     // }).catch(() => {
+//     //     games.push(myStorage.getItem("id"));
+//     //     console.log("this line has been executed");
+//     // });
+
+//     // console.log(games);
+
+// }
+
+
 $(document).ready(function () {
+    $(document).on('click','#save_game', handleSaveGame);
     start();
 });

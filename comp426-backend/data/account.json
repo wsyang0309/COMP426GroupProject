@@ -1,5 +1,12 @@
 {
   "users": {
+    "12345": {
+      "passwordHash": "$2b$10$c6upCRwjyJo65V.ojpMGLeWj./jDQbRk5vq1./hlMEhQGACHw2vrG",
+      "data": {
+        "fname": "first",
+        "lname": "last"
+      }
+    },
     "wsyang0309@gmail": {
       "com": {
         "passwordHash": "$2b$10$A2T464L.0r82WPLvpPoesOLWF7n696BZZsXnT41h6kdge7Gforytq"
