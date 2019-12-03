@@ -14,13 +14,14 @@ async function handleLogin(e) {
     let $nav_list = $('#nav_list');
 
     const loginUser = await $.ajax({
-        method: 'post',
+        method: 'POST',
         url: 'http://localhost:3000/account/login',
         "data":{
             "name": username,
             "pass": password,
         }
     }).then(response => {
+        console.log(response.jwt);
         localStorage.setItem("jwt", response.jwt);
         window.location.href = "index.html";
     }).catch(() => {
