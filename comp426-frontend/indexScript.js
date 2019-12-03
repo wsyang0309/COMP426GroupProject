@@ -22,7 +22,7 @@ let $posters = $(`#gamePosters`);
 let editNav = function () {
     let jwt = localStorage.getItem("jwt");
     let component;
-    if(jwt == null) {
+    if (jwt == null) {
         component = $(`
             <li><a href="accLogin.html">Login</a></li>
         `);
@@ -35,11 +35,11 @@ let editNav = function () {
     $('#nav').append(component);
 }
 
-let handleLogOut = function() {
+let handleLogOut = function () {
     localStorage.removeItem("jwt");
 }
 
-let start = async function() {
+let start = async function () {
     let result = await axios({
         url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
         method: 'POST',
@@ -51,14 +51,14 @@ let start = async function() {
         data: `fields name,popularity, rating,cover,first_release_date; where rating > 90  ;limit 20; sort popularity desc; `
     })
 
-    for(let i=0;i<result.data.length;i++) {
+    for (let i = 0; i < result.data.length; i++) {
         addCover(result.data[i].cover, result.data[i].id)
-        
+
     }
     addNews();
 }
 //& first_release_date >1546300800 
-let addCover = async function (cover,id) {
+let addCover = async function (cover, id) {
 
     let result = await axios({
         url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/covers",
@@ -69,9 +69,9 @@ let addCover = async function (cover,id) {
         },
         data: `fields url, height, width, image_id; where id=${cover};`
     })
-   // Clickable posters
+    // Clickable posters
     $('#gamePosters').prepend(`<img src="//images.igdb.com/igdb/image/upload/t_1080p/${result.data[0].image_id}.jpg" onclick="handlePosterClick(${id})" class="posters" id=${id}/></a>`)
-    
+
     function handlePosterClick(gameid) {
         console.log("game id is " + gameid) + " after clicking";
         localStorage.setItem("id", gameid);
@@ -79,7 +79,7 @@ let addCover = async function (cover,id) {
     }
 }
 
-let addNews = async function() {
+let addNews = async function () {
     let pulses = await axios({
         url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/pulses",
         method: 'POST',
@@ -88,13 +88,13 @@ let addNews = async function() {
             'user-key': API_KEY
         },
         data: "fields author,category,created_at,ignored,image,published_at,pulse_image,pulse_source,summary,tags,title,uid,updated_at,videos,website; where created_at > 1546300800; limit 30;"
-      })
-    
-      
-    
-    
-    for(let i=0;i<pulses.data.length;i++) {
-        if (pulses.data[i].summary !== undefined && pulses.data[i].website !==undefined) {
+    })
+
+
+
+
+    for (let i = 0; i < pulses.data.length; i++) {
+        if (pulses.data[i].summary !== undefined && pulses.data[i].website !== undefined) {
             let pulsesSource = await axios({
                 url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/pulse_urls",
                 method: 'POST',
@@ -103,16 +103,16 @@ let addNews = async function() {
                     'user-key': API_KEY
                 },
                 data: `fields trusted,url,id; where id =${pulses.data[i].website};`
-              })
-            
-           
-            if (pulses.data[i].image !==undefined) {
+            })
+
+
+            if (pulses.data[i].image !== undefined) {
                 // include image if there is one
                 $('#news').append(`
-                    <div id=posts class=${pulses.data.id}>
+                    <div id="posts" class="${pulses.data.id} reviewBox">
                         <h2 class="has-text-bold" id="author">${pulses.data[i].author}</h2>
                         <h3 id="ptitle">${pulses.data[i].title}</h3>
-                        <a  href="${pulsesSource.data[0].url}"><img id="pimg" src="${pulses.data[i].image}"></a>
+                        <a  href="${pulsesSource.data[0].url}"><img class="pimg" src="${pulses.data[i].image}"></a>
                         <p id="psum">${pulses.data[i].summary}</p>
                         <a style="color:blue;" href="${pulsesSource.data[0].url}">Read More</a>
                         
@@ -120,23 +120,23 @@ let addNews = async function() {
             } else {
                 // don't include the image
                 $('#news').append(`
-                    <div id=posts class=${pulses.data.id}>
+                    <div id=posts class="${pulses.data.id} reviewBox">
                         <h2 class="has-text-bold"  id="author">${pulses.data[i].author}</h2>
                         <h3 id="ptitle">${pulses.data[i].title}</h3>
                         <p id="psum">${pulses.data[i].summary}</p>
                         <a style="color:blue;" href="${pulsesSource.data[0].url}">Read More</a>
                     </div>`)
             }
-            
+
         }
-        
-        
+
+
     }
 
 }
 
 $(document).ready(function () {
-    $(document).on('click','#log_out', handleLogOut);
+    $(document).on('click', '#log_out', handleLogOut);
     editNav();
     start();
 });

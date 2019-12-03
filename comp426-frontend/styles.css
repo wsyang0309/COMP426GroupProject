@@ -63,9 +63,8 @@ img.media{
 .search {
     display: inline;
     float: right;
-    
 }
-#ping {
+.pimg {
     height: 350px;
     width: 500px;
 }
