@@ -65,6 +65,10 @@ img.media{
     float: right;
     
 }
+#ping {
+    height: 350px;
+    width: 500px;
+}
 
 #search {
     margin-top: 50px;

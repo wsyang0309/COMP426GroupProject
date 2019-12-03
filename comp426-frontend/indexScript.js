@@ -48,7 +48,7 @@ let start = async function() {
             'user-key': API_KEY
         },
 
-        data: `fields name,rating,cover,first_release_date; where rating > 90 & first_release_date >1546300800;limit 20;`
+        data: `fields name,popularity, rating,cover,first_release_date; where rating > 90  ;limit 20; sort popularity desc; `
     })
 
     for(let i=0;i<result.data.length;i++) {
@@ -57,7 +57,7 @@ let start = async function() {
     }
     addNews();
 }
-
+//& first_release_date >1546300800 
 let addCover = async function (cover,id) {
 
     let result = await axios({
