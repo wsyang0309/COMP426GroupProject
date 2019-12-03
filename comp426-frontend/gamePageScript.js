@@ -207,7 +207,6 @@ let addArtwork = async function () {
 }
 
 
-//Saving Game to user profile
 // let myStorage = window.localStorage;
 
 // async function handleSaveGame(e) {
@@ -219,7 +218,7 @@ let addArtwork = async function () {
 //             "Authorization": "Bearer " + myStorage.getItem("jwt"),
 //         },
 //     });
-    
+
 //     const currentUser = user.user;
 //     console.log(currentUser.name);
 
