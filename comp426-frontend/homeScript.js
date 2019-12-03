@@ -70,17 +70,44 @@ let addNews = async function() {
         data: "fields author,category,created_at,ignored,image,published_at,pulse_image,pulse_source,summary,tags,title,uid,updated_at,videos,website; where created_at > 1546300800; limit 30;"
       })
     
-    console.log(pulses)
+      
+    
+    
     for(let i=0;i<pulses.data.length;i++) {
-        if (pulses.data[i].summary !== undefined) {
-            $('#news').append(`
+        if (pulses.data[i].summary !== undefined && pulses.data[i].website !==undefined) {
+            let pulsesSource = await axios({
+                url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/pulse_urls",
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'user-key': API_KEY
+                },
+                data: `fields trusted,url,id; where id =${pulses.data[i].website};`
+              })
+            
+           
+            if (pulses.data[i].image !==undefined) {
+                // include image if there is one
+                $('#news').append(`
                     <div id=posts class=${pulses.data.id}>
-                        <h2 id="author">${pulses.data[i].author}</h2>
+                        <h2 class="has-text-bold" id="author">${pulses.data[i].author}</h2>
                         <h3 id="ptitle">${pulses.data[i].title}</h3>
-                        <img id="pimg" src="${pulses.data[i].image}">
+                        <a  href="${pulsesSource.data[0].url}"><img id="pimg" src="${pulses.data[i].image}"></a>
                         <p id="psum">${pulses.data[i].summary}</p>
+                        <a style="color:blue;" href="${pulsesSource.data[0].url}">Read More</a>
                         
                     </div>`)
+            } else {
+                // don't include the image
+                $('#news').append(`
+                    <div id=posts class=${pulses.data.id}>
+                        <h2 class="has-text-bold"  id="author">${pulses.data[i].author}</h2>
+                        <h3 id="ptitle">${pulses.data[i].title}</h3>
+                        <p id="psum">${pulses.data[i].summary}</p>
+                        <a style="color:blue;" href="${pulsesSource.data[0].url}">Read More</a>
+                    </div>`)
+            }
+            
         }
         
         
