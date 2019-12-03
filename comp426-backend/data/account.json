@@ -7,6 +7,13 @@
         "lname": "last"
       }
     },
+    "123458754": {
+      "passwordHash": "$2b$10$9fdnZ/J2J4ZitLUVd/QPnu/yDcilKHt4IwfCnbpd4rEW5wB3R9hj6",
+      "data": {
+        "fname": "",
+        "lname": ""
+      }
+    },
     "wsyang0309@gmail": {
       "com": {
         "passwordHash": "$2b$10$A2T464L.0r82WPLvpPoesOLWF7n696BZZsXnT41h6kdge7Gforytq"
@@ -31,6 +38,13 @@
           "fname": "test F",
           "lname": "test L"
         }
+      }
+    },
+    "09876543": {
+      "passwordHash": "$2b$10$TENjdoW7w5d9dkt24rCjMuz0Wu3zPpP/KMgGTWbgqCvzcrF.qBuhW",
+      "data": {
+        "fname": "",
+        "lname": ""
       }
     }
   }

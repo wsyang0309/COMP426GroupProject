@@ -2,46 +2,59 @@
 <html lang="en">
 
 <head>
-    <title>Signup</title>
+    <title>All Things Gaming</title>
 
     <!-- Include links to CSS stylesheets below -->
+    
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="indexScript.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
 
 </head>
 
 <body>
-    
+
     <div id="root">
+        <!-- TODO: Add other links to scripts here -->
+        <script src="node_modules/jquery/dist/jquery.js" type="text/JavaScript"></script>
+        <script src="indexScript.js" type="module"></script>
+        <script src="node_modules/axios/dist/axios.js"></script>
         <img src="/media/logo.png" class="banner" />
 
-
-        <div class="nav">
-            <ul id="nav_list">
-                <li><a href="signupPage.html">Sign Up</a></li>
-                <!--For ease of development only. 
-                This line will be removed in the end, this item will show up once a user logged in-->
-                <li><a href="homePage.html">Home Page (dev)</a></li> 
+        <div class="nav" id ="nav">
+            <ul>
+                <li><a href="gamePage.html">GamePage (Testing)</a></li>
+                <li><a href="profilePage.html">Profile (Testing)</a></li>
+                <li><a href="accLogin.html">Log out (Testing)</a></li>
+                <!--- <li><a href=".html"></a></li>-->
             </ul>
         </div>
-
-        <!--inputs for account login and sign up-->
-        <div>
-            Username: <input id="username" type="text" placeholder="Create your username" required><br>
-            Password: <input id="password" type="password" placeholder="********" required><br>
+        <div class="search">
+            <input type="text" placeholder="Search..">
+            <button type="submit"><i id="search">submit</button>
         </div>
         
-        <div>
-            <button id="login_button">Login</button>
+        <div class="section" id="media">
+            <h1 class="subtitle">Popular Games</h1>
+            <div id="gamePosters" class="columns"></div>
+            
+            <h1 class="subtitle">News
+            </h1>
+            <div id=news></div>
+            
         </div>
-
-        <div>
-            <p id="message"></p>
-        </div>
+        <div class="contentIndex">        </div>
         
+        <script> 
+            function handlePosterClick(gameid) {
+                    localStorage.setItem("id", gameid);
+                    window.location.href = "gamePage.html";
+            }
+        </script>
+
+            
     </div>
+
+    
 </body>
 
 </html>

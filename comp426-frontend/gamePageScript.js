@@ -248,6 +248,6 @@ let addArtwork = async function () {
 
 
 $(document).ready(function () {
-    $(document).on('click','#save_game', handleSaveGame);
+    // $(document).on('click','#save_game', handleSaveGame);
     start();
 });

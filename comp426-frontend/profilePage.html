@@ -8,41 +8,27 @@
     
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
+    <script src="node_modules/jquery/dist/jquery.js" type="text/JavaScript"></script>
+    <script src="profileScript.js" type="module"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
 
 </head>
 
 <body>
 
     <div id="root">
-        <!-- TODO: Add other links to scripts here -->
-        <script src="node_modules/jquery/dist/jquery.js" type="text/JavaScript"></script>
-        <script src="profileScript.js" type="module"></script>
-        <script src="node_modules/axios/dist/axios.js"></script>
         <img src="/media/logo.png" class="banner" />
 
         <div class="nav">
             <ul>
-                <li><a href="homePage.html">Home Page (Testing)</a></li>
-                <li><a href="index.html">Log out</a></li>
+                <li><a href="homePage.html">Home Page</a></li>
+                <li><a id="log_out" href="index.html">Log out</a></li>
                 <!--- <li><a href=".html"></a></li>-->
             </ul>
         </div>
 
-        <div class="section" id="media">
-            <h1 class="subtitle">Saved Games</h1>
-            <div id="gamePosters" class="columns"></div>
-            
-        </div>
         
-        <script> 
-            function handlePosterClick(gameid) {
-                    
-                    localStorage.setItem("id", gameid);
-                    window.location.href = "gamePage.html";
-            }
-        </script>
 
-            
     </div>
 
     
