@@ -20,6 +20,7 @@ let start = async function () {
 
         data: `fields artworks , similar_games, name, age_ratings, cover, popularity, rating , storyline, first_release_date, summary, videos; where id = ${gameID};`
     })
+    
     renderGame(result.data);
     $('title').html(`${result.data[0].name}`);
 }
@@ -208,46 +209,19 @@ let addArtwork = async function () {
 
 
 //Saving Game to user profile
-// let myStorage = window.localStorage;
+function handleSaveGame(e) {
 
-// async function handleSaveGame(e) {
-
-//     const user = await $.ajax({
-//         method: 'GET',
-//         url: "http://localhost:3000/account/status",
-//         headers: {
-//             "Authorization": "Bearer " + myStorage.getItem("jwt"),
-//         },
-//     });
-    
-//     const currentUser = user.user;
-//     console.log(currentUser.name);
-
-//     const save = await $.ajax({
-//         method: 'POST',
-//         url: "http://localhost:3000/user/" + currentUser.name,
-//         "data": {
-//             "games" : "1",
-//         },
-//     });
-
-//     // const user_games = await $.ajax({
-//     //     method: 'GET',
-//     //     url: "http://localhost:3000/users/" + currentUser.name + "/games",
-//     // }).then(response => {
-//     //     games = response;
-//     //     games.push(myStorage.getItem("id"));
-//     // }).catch(() => {
-//     //     games.push(myStorage.getItem("id"));
-//     //     console.log("this line has been executed");
-//     // });
-
-//     // console.log(games);
-
-// }
+    var retrievedData = localStorage.getItem("saved");
+    var saved_games = new Set(JSON.parse(retrievedData));
+    saved_games.add(localStorage.getItem("id"));
+    localStorage.setItem("saved", JSON.stringify(Array.from(saved_games)));
+}
 
 
 $(document).ready(function () {
-    // $(document).on('click','#save_game', handleSaveGame);
+    if(localStorage.getItem("jwt") != null) {
+        $('#save').append($(`<button id="save_game">Save Game</button>`));
+        $(document).on('click','#save_game', handleSaveGame);
+    }
     start();
 });

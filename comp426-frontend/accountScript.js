@@ -23,6 +23,8 @@ async function handleLogin(e) {
     }).then(response => {
         console.log(response.jwt);
         localStorage.setItem("jwt", response.jwt);
+        var saved = [];
+        localStorage.setItem("saved", JSON.stringify(saved));
         window.location.href = "index.html";
     }).catch(() => {
         $message.html('<span class="has-text-danger">Check your username and password again. Sign up if you have not done yet.</span>');
@@ -47,7 +49,7 @@ async function handleCreateAccount(e) {
     }).then(() => {
         $message.html('<span class="has-text-success">Sign up success! You will now be redirectred to the login page.</span>');
         setTimeout(()=>{
-            window.location.href = "login.html";
+            window.location.href = "accLogin.html";
         }, 2000);
     }).catch(() => {
         $message.html('<span class="has-text-danger">* indicates required items. Make sure your sign-up information are typed in correctly.</span>');

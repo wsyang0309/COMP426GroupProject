@@ -7,6 +7,21 @@
         "lname": "last"
       }
     },
+    "123321": {
+      "passwordHash": "$2b$10$ES/XV6G2JtKeMCIJ8hUV5.kHnZZiSoYpN9B0wVHlpCfmqA8tMD3Vi",
+      "data": {
+        "fname": "",
+        "lname": "",
+        "saved": []
+      }
+    },
+    "1929922": {
+      "passwordHash": "$2b$10$1K2zyQa8Uq33F3qf/FmIvON9bTZGREsX762n56e.aWp2PLySEKuIG",
+      "data": {
+        "fname": "",
+        "lname": ""
+      }
+    },
     "123458754": {
       "passwordHash": "$2b$10$9fdnZ/J2J4ZitLUVd/QPnu/yDcilKHt4IwfCnbpd4rEW5wB3R9hj6",
       "data": {
@@ -42,6 +57,28 @@
     },
     "09876543": {
       "passwordHash": "$2b$10$TENjdoW7w5d9dkt24rCjMuz0Wu3zPpP/KMgGTWbgqCvzcrF.qBuhW",
+      "data": {
+        "fname": "",
+        "lname": ""
+      }
+    },
+    "savegame": {
+      "passwordHash": "$2b$10$bKN0W5PqGr1k3V04iHTAZeNM9XP6A1gIju932alWpahbS9evr4jiu",
+      "data": {
+        "fname": "",
+        "lname": "",
+        "saved": []
+      }
+    },
+    "qqqqq": {
+      "passwordHash": "$2b$10$f9hiTn0AOFrbBc9Q.1dxUO51vLfH0B7lPtwuovUGKxRMLPb8gapM2",
+      "data": {
+        "fname": "",
+        "lname": ""
+      }
+    },
+    "aaaaa": {
+      "passwordHash": "$2b$10$4J.fJ1U6qa0EEAQns8LgiecokaQ5SH4JhKibSR4EFIPGWMSMkN65W",
       "data": {
         "fname": "",
         "lname": ""
