@@ -20,7 +20,7 @@ let start = async function () {
 
         data: `fields artworks , similar_games, name, age_ratings, cover, popularity, rating , storyline, first_release_date, summary, videos; where id = ${gameID};`
     })
-    
+
     renderGame(result.data);
     $('title').html(`${result.data[0].name}`);
 }
@@ -203,45 +203,16 @@ let addArtwork = async function () {
     for (let i = 0; i < result.data.length; i++) {
         let image = `<img src="//images.igdb.com/igdb/image/upload/t_720p/${result.data[i].image_id}.jpg" class="column pics" />`
         $('#artwork').append(image);
-
     }
 }
 
-
-<<<<<<< HEAD
 //Saving Game to user profile
 function handleSaveGame(e) {
-=======
-// let myStorage = window.localStorage;
-
-// async function handleSaveGame(e) {
-
-//     const user = await $.ajax({
-//         method: 'GET',
-//         url: "http://localhost:3000/account/status",
-//         headers: {
-//             "Authorization": "Bearer " + myStorage.getItem("jwt"),
-//         },
-//     });
-
-//     const currentUser = user.user;
-//     console.log(currentUser.name);
-
-//     const save = await $.ajax({
-//         method: 'POST',
-//         url: "http://localhost:3000/user/" + currentUser.name,
-//         "data": {
-//             "games" : "1",
-//         },
-//     });
->>>>>>> 94dc07493a8dff9e6880f21d7a92627b7229c443
-
     var retrievedData = localStorage.getItem("saved");
     var saved_games = new Set(JSON.parse(retrievedData));
     saved_games.add(localStorage.getItem("id"));
     localStorage.setItem("saved", JSON.stringify(Array.from(saved_games)));
 }
-
 
 $(document).ready(function () {
     if(localStorage.getItem("jwt") != null) {
