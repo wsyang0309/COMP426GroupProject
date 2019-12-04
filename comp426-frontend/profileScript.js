@@ -11,10 +11,10 @@ let showProfile = async function() {
     });
     
     const currUser = user.user;
-    console.log(currUser);
+    let first_name = currUser.data.fname == ""? "Smart ATG User" : currUser.data.fname;
     let profile = $(`
         <div>
-            <p>First Name: `+ currUser.data.fname +`</p>
+            <p>Welcome, `+ first_name +`!</p>
         </div>
     `);
 

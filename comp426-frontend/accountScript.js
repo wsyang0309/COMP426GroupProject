@@ -27,7 +27,7 @@ async function handleLogin(e) {
         localStorage.setItem("saved", JSON.stringify(saved));
         window.location.href = "index.html";
     }).catch(() => {
-        $message.html('<span class="has-text-danger">Check your username and password again. Sign up if you have not done yet.</span>');
+        alert("Check your username and password again." + "\n" + "Sign up if you have not done yet.");
     });
 }
 
@@ -52,6 +52,6 @@ async function handleCreateAccount(e) {
             window.location.href = "accLogin.html";
         }, 2000);
     }).catch(() => {
-        $message.html('<span class="has-text-danger">* indicates required items. Make sure your sign-up information are typed in correctly.</span>');
+        alert("* indicates required items." + "\n" + " Make sure your sign-up information are typed in correctly.");
     });
 }

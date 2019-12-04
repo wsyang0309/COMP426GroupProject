@@ -147,3 +147,12 @@ li{
     padding: 3rem;
     
 }
+
+
+
+.input_block {
+    text-align: center;
+    padding-top: 30px;
+    margin: 0 auto;
+    width: 250px;
+}

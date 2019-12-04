@@ -32,7 +32,7 @@ let editNav = function () {
             <li><a id="log_out" href="index.html">Log out</a></li>
         `);
     }
-    $('#nav').append(component);
+    $('#nav_list').append(component);
 }
 
 let handleLogOut = function () {
