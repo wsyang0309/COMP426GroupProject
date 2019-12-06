@@ -6,8 +6,12 @@
 
     <!-- Include links to CSS stylesheets below -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="accountScript.js"></script>
 
 </head>
@@ -21,22 +25,18 @@
         <div class="nav">
             <ul id="nav_list">
                 <li><a href="index.html">Home Page</a></li> 
-                <li><a href="accSignup.html">Sign Up</a></li>
             </ul>
         </div>
 
         <!--inputs for account login and sign up-->
-        <div>
-            Username: <input id="username" type="text" placeholder="Create your username" required><br>
-            Password: <input id="password" type="password" placeholder="********" required><br>
-        </div>
-
-        <div>
-            <button id="login_button">Login</button>
-        </div>
-
-        <div>
-            <p id="message"></p>
+        <div class="input_block">
+            Username: <input id="username" class="input" type="text" placeholder="Type in your username" required><br>
+            Password: <input id="password" class="input" type="password" placeholder="********" required><br>
+            <div style="padding-top: 20px">
+                <button class="button" id="login_button">Login</button>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <button class="button" onclick="window.location.href='accSignup.html'">Sign up</button>
+            </div>
         </div>
         
     </div>

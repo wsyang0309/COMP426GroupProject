@@ -7,7 +7,8 @@
     <!-- Include links to CSS stylesheets below -->
     
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/bulma/css/bulma.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="node_modules/jquery/dist/jquery.js" type="text/JavaScript"></script>
     <script src="profileScript.js" type="module"></script>
     <script src="node_modules/axios/dist/axios.js"></script>
@@ -23,14 +24,17 @@
             <ul>
                 <li><a href="index.html">Home Page</a></li>
                 <li><a id="log_out" href="index.html">Log out</a></li>
-                <!--- <li><a href=".html"></a></li>-->
             </ul>
         </div>
+        
+        <div class = "section subtitle" style="padding-bottom: 0px" id="welcome_title">
+        </div>
 
-        <div class="section" id="media">
+        <div class = "section">
             <h1 class="subtitle">Saved Games</h1>
-            <div id="gamePosters" class="columns"></div>
-            
+            <div id="library">
+
+            </div>
         </div>
 
         

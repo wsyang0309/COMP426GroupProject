@@ -6,6 +6,8 @@
 
     <!-- Include links to CSS stylesheets below -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="accountScript.js"></script>
@@ -25,21 +27,14 @@
         </div>
 
         <!--inputs for account login and sign up-->
-        <div>
-            Username: <input id="username" type="text" placeholder="Username" required>*<br>
-            Password: <input id="password" type="password" placeholder="********" required>*<br>
-            First Name: <input id="fname" type="text" placeholder="Frist Name" optional><br>
-            Last Name: <input id="lname" type="text" placeholder="Last Name" optional><br>
-        </div>
-        
-        <div>
-            <button id="signup_button">Sign Up</button>
+        <div class="input_block">
+            Username *: <input class="input" id="username" type="text" placeholder="Username" required><br><br>
+            Password *: <input class="input" id="password" type="password" placeholder="********" required><br><br>
+            First Name: <input class="input" id="fname" type="text" placeholder="Frist Name" optional><br><br>
+            Last Name: <input class="input" id="lname" type="text" placeholder="Last Name" optional><br><br>
+            <button class="button" id="signup_button">Sign me up!</button>
         </div>
 
-        <div>
-            <p id="message"></p>
-        </div>
-        
     </div>
 </body>
 

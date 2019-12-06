@@ -209,3 +209,18 @@ li{
     background-color: DodgerBlue !important; 
     color: #ffffff; 
   }
+.input_block {
+    text-align: center;
+    padding-top: 30px;
+    margin: 0 auto;
+    width: 250px;
+}
+.saved_game {
+    display: inline-block;
+    text-align: center;
+    margin: 2em;
+}
+.saved_game_cover {
+    height: 200px;
+    width: 150px;
+}

@@ -212,12 +212,19 @@ function handleSaveGame(e) {
     var saved_games = new Set(JSON.parse(retrievedData));
     saved_games.add(localStorage.getItem("id"));
     localStorage.setItem("saved", JSON.stringify(Array.from(saved_games)));
+    window.location.href = "gamePage.html";
 }
 
 $(document).ready(function () {
     if(localStorage.getItem("jwt") != null) {
-        $('#save').append($(`<button id="save_game">Save Game</button>`));
-        $(document).on('click','#save_game', handleSaveGame);
+        var retrievedData = localStorage.getItem("saved");
+        var saved_games = new Set(JSON.parse(retrievedData));
+        if(saved_games.has(localStorage.getItem("id"))) {
+            $('#save').append($(`<button class="button is-small is-success">Saved</button>`));
+        } else {
+            $('#save').append($(`<button class="button is-small is-danger" id="save_game">Save Game</button>`));
+            $(document).on('click','#save_game', handleSaveGame);
+        }
     }
     start();
 });
