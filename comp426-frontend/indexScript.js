@@ -286,5 +286,5 @@ $(document).ready(function () {
     editNav();
     searchOptions();
     $(document).on('click', '#submit', onSubmit );
-    //start();
+    start();
 });
