@@ -242,14 +242,13 @@ function autocomplete(inp, arr,id) {
             'Accept': 'application/json',
             'user-key': API_KEY
         },
-        data: `fields name, id; sort popularity desc; limit 150;`,
+        data: `fields name, id; sort popularity desc; limit 250;`,
     });
     let answer = [];
-    let ids = [];
 
-    for(let i = 0; i < 49; i++) {
+
+    for(let i = 0; i < 249; i++) {
         answer[i]= await options.data[i].name;
-        ids[i] = await options.data[i].id;
     }
 
     autocomplete(document.getElementById("myInput"), answer);
@@ -266,11 +265,11 @@ function autocomplete(inp, arr,id) {
             'Accept': 'application/json',
             'user-key': API_KEY
         },
-        data: `fields name, id; sort popularity desc; limit 150;`,
+        data: `fields name, id; sort popularity desc; limit 250;`,
     });
     let gameid; 
 
-    for(let i = 0; i < 149; i++) {
+    for(let i = 0; i < 249; i++) {
        let option1 = await options.data[i].name;
        if(option1 === title) {
            gameid = await options.data[i].id;
