@@ -140,14 +140,15 @@ let createDetails = function (game) {
     <p>Critics Rating: ${Math.round(game.rating)}</p>
     <p>Release Date: ${fixDate(game.first_release_date)}</p>
     <p>Summary: </p>
-    <p>${game.summary}</p>
-    <p>Plot: </p>
-    <p>${game.storyline}</p>
-    </div>
-    
-    
-    
+    <p>${game.summary}</p> 
     `
+
+    if (game.storyline == undefined) {
+        details += '</div>';
+    } else {
+        details += `<p>Plot: </p>
+        <p>${game.storyline}</p></div>`
+    }
     $("#details").append(details);
 }
 let createSimilarGames = async function (games) {
@@ -216,14 +217,14 @@ function handleSaveGame(e) {
 }
 
 $(document).ready(function () {
-    if(localStorage.getItem("jwt") != null) {
+    if (localStorage.getItem("jwt") != null) {
         var retrievedData = localStorage.getItem("saved");
         var saved_games = new Set(JSON.parse(retrievedData));
-        if(saved_games.has(localStorage.getItem("id"))) {
+        if (saved_games.has(localStorage.getItem("id"))) {
             $('#save').append($(`<button class="button is-small is-success">Saved</button>`));
         } else {
             $('#save').append($(`<button class="button is-small is-danger" id="save_game">Save Game</button>`));
-            $(document).on('click','#save_game', handleSaveGame);
+            $(document).on('click', '#save_game', handleSaveGame);
         }
     }
     start();
