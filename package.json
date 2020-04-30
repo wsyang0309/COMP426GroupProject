@@ -8,7 +8,7 @@
     "browser-sync": "^2.26.7",
     "browsersync": "0.0.1-security",
     "esm": "^3.2.25",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {},
   "scripts": {
